@@ -29,7 +29,7 @@ const Selection = ({navigation}) => {
         <Box style={{marginTop:40}}>
             <Box>
                 {paths && paths.map((path) => 
-                <Pressable key={path.id} onPress={() => navigation.navigate('Map', {path: path})} style={styles.pathElementPressable}>
+                <Pressable key={path.id} onPress={() => navigation.navigate('Location', {path: path})} style={styles.pathElementPressable}>
                     <Text style={styles.pathElementText}>{path.name}</Text>
                 </Pressable>)}
             </Box>

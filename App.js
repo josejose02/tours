@@ -21,9 +21,10 @@ import { Selection } from './Components/Selection';
 
 import 'react-native-url-polyfill/auto';
 import { LiveHeader } from './Components/LiveHeader';
-import { Detail } from './Detail';
+import { Detail } from './Components/Detail';
 
 import useStore from './store';
+import {DataList} from './Components/DataList';
 
 
 const Stack = createNativeStackNavigator();
@@ -40,8 +41,9 @@ const App: () => Node = () => {
 			<NavigationContainer>
 				<Stack.Navigator screenOptions={{headerShown: false}}>
 					<Stack.Screen name="Selection" component={Selection}/>
+					<Stack.Screen name="Location" component={LocationManager}/>
 					<Stack.Screen name="Detail" component={Detail}/>
-					<Stack.Screen name="Map" component={LocationManager}/>
+					<Stack.Screen name="DataList" component={DataList}/>
 				</Stack.Navigator>
 			</NavigationContainer>
 		</NativeBaseProvider>

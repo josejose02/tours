@@ -7,12 +7,15 @@ import Entypo from 'react-native-vector-icons/Entypo';
 
 
 const Detail = ({ route, navigation }) => {
+    
+    const [data, setData] = React.useState(route.params.data);
     const [showPlayerOptions, setShowPlayerOptions] = React.useState(false);
     const [playOptions, setPlayOptions] = React.useState();
+    
     return (
         <SafeAreaView style={styles.detail}>
             <View style={styles.header}>
-                <TouchableOpacity onPress={() => navigation.navigate('Map')}>
+                <TouchableOpacity onPress={() => navigation.navigate('Location')}>
                     <Entypo name="map" size={30} color="#000000"/>
                 </TouchableOpacity>
                 <Text style={styles.header.text}>Text</Text>
@@ -26,7 +29,7 @@ const Detail = ({ route, navigation }) => {
                 </View>
                 <View style={styles.content}>
                     <Text style={styles.content.title}>
-                        Plaza de Sol
+                        {data.name}
                     </Text>
                     <Text style={styles.content.subtitle}>
                         thing
