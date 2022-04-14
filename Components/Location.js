@@ -162,7 +162,7 @@ const LocationManager = ({route, navigation}) => {
 			<View style={[styles.header, styles.front]}>
 				<Switch value={enabled} onValueChange={setEnabled}/>
 				<TouchableOpacity style={styles.header.icon} onPress={() => navigation.navigate('DataList')}>
-					<Entypo  name="list" size={30} color="#000000"/>
+					<Entypo name="list" size={30} color="#000000"/>
 				</TouchableOpacity>
 			</View>
 			<Box style={styles.front}>
@@ -173,7 +173,7 @@ const LocationManager = ({route, navigation}) => {
 				<Button color="#f194ff" title="Selection" onPress={() => navigation.navigate('Selection')}/>
 			</Box>
 			{location && <Map location={location} locations={locations} fences={fences} locationsId={locationsId}/> }
-			<Box>
+			<Box style={styles.front}>
 				<AudioPlayer></AudioPlayer>
 			</Box>
         </Box>

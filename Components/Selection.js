@@ -1,8 +1,9 @@
 import * as React from 'react';
 
-import { Text, Switch, Button, StyleSheet, Pressable } from 'react-native';
+import { Text, Switch, Button, StyleSheet, TouchableOpacity } from 'react-native';
 import { NativeBaseProvider, Box } from "native-base";
 import { getAllPaths } from '../supabaseClient';
+import { AudioPlayer } from './AudioPlayer';
 
 const Selection = ({navigation}) => {
     const [paths, setPaths] = React.useState();
@@ -29,11 +30,11 @@ const Selection = ({navigation}) => {
         <Box style={{marginTop:40}}>
             <Box>
                 {paths && paths.map((path) => 
-                <Pressable key={path.id} onPress={() => navigation.navigate('Location', {path: path})} style={styles.pathElementPressable}>
+                <TouchableOpacity key={path.id} onPress={() => navigation.navigate('Location', {path: path})} style={styles.pathElementPressable}>
                     <Text style={styles.pathElementText}>{path.name}</Text>
-                </Pressable>)}
+                </TouchableOpacity>)}
             </Box>
-
+            <AudioPlayer></AudioPlayer>
         </Box>
     )
 }
